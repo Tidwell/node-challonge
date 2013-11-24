@@ -203,7 +203,6 @@ function mupdate() {
 
 
 index();
-//show();
 //create();
 //show();
 //update();
