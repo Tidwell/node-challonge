@@ -60,7 +60,7 @@ All methods are qs based, so I would assume nginx would ignore content-length fo
 ---
 
 ##Etc
-The other language wrappers are AWESOME. I consulted their sources often when trying to figure out WTF the API actually wanted. One of the most important examples was from the python lib's api.py - it confirmed I wasn't insane about how to construct the querystring.  Ruby and PHP provide native ways to encode objects in ```object[property]=value``` syntax, but python and node don't.
+The other language wrappers are AWESOME. I consulted their sources often when trying to figure out WTF the API actually wanted. One of the most important examples was from the python lib's api.py - it confirmed I wasn't insane about how to construct the querystring.  Ruby and PHP provide native ways to stringify objects in ```object[property]=value``` syntax, but python and node don't.
 
 ---
 
