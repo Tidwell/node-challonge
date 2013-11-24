@@ -67,7 +67,7 @@ The other language wrappers are AWESOME. I consulted their sources often when tr
 ##TODO
 * move /v1/tournaments to config
 * abstract path suffix for partcipants, matches
-* abstract destroy
+* abstract destroy of qs params
 
 1. fix randomize
 2. support camelCase -> under_score params
