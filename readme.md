@@ -86,7 +86,7 @@ http://api.challonge.com/v1/documents/participants/create shows participant_id a
 
 http://api.challonge.com/v1/documents/participants/randomize shows participant_id as a required field when the server does not respect passing it, and is not required.
 
-Also, I think the server might be sending an invalid header on randomize somehow. Node doesn't handle invalid headers well, will look into the causes for:
+Also, I think the server might be sending an invalid content-length header on randomize somehow. Node doesn't handle invalid headers well, will look into the causes for:
 
 ```
 [Error: Parse Error] bytesParsed: 0, code: 'HPE_INVALID_CONSTANT' in node.

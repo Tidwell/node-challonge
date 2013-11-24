@@ -5,7 +5,7 @@ var client = challonge.createClient({
 	format: 'json'
 });
 
-var tourneyName = 'tststny_2';
+var tourneyName = '710101';
 
 function index() {
 	client.tournaments.index({
@@ -202,9 +202,9 @@ function mupdate() {
 
 
 
-index();
+//index();
 //create();
-//show();
+show();
 //update();
 //destroy();
 //start();
