@@ -53,3 +53,6 @@ client.tournaments.create({
 3. validate required params
 4. docs
 5. tests
+
+##BTW
+The structure of this API is ripped off from https://github.com/nodejitsu/nodejitsu-api - its too darn good not to copy
