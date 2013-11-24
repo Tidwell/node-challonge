@@ -90,4 +90,4 @@ Also, I think the server might be sending an invalid header on randomize somehow
 
 ---
 
-###The structure of this API is ripped off from https://github.com/nodejitsu/nodejitsu-api - its too darn good not to copy
+####The structure of this api wrapper is ripped off from https://github.com/nodejitsu/nodejitsu-api
