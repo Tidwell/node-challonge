@@ -1,0 +1,11 @@
+{
+  "name": "node-challonge",
+  "description": "Wrapper for the challong api",
+  "author": "Aaron Tiwell <aaron.tidwell@gmail.com>",
+  "main": "./lib/challonge.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "engine": "node >= 0.10.x"
+}
