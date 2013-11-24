@@ -1,3 +1,5 @@
+##This is in very early alpha
+
 ##example
 
 checkout this repo into ./
@@ -44,3 +46,10 @@ client.tournaments.create({
 	}
 });
 ```
+
+##TODO
+1. fix randomize
+2. support camelCase -> under_score params
+3. validate required params
+4. docs
+5. tests
