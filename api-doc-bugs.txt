@@ -1,9 +1,0 @@
-http://api.challonge.com/v1
-shows particpants.randomize as GET when method is actually POST
-
-http://api.challonge.com/v1/documents/participants/create
-shows participant_id as a required field when the server does not respect passing this and it is not required
-
-http://api.challonge.com/v1/documents/participants/randomize
-shows participant_id as a required field when the server does not respect passing this and it is not required
-server response has invalid headers causing [Error: Parse Error] bytesParsed: 0, code: 'HPE_INVALID_CONSTANT' in node
