@@ -2,10 +2,11 @@ var challonge = require('./../');
 
 var client = challonge.createClient({
 	apiKey: require('./../key.js'),
-	format: 'json'
+	format: 'json',
+	version: 1
 });
 
-var tourneyName = '710101';
+var tourneyName = 'adfasdfasdf3333';
 
 function index() {
 	client.tournaments.index({
@@ -43,7 +44,7 @@ function show() {
 
 function update() {
 	client.tournaments.update({
-		id: 'test-tourney',
+		id: tourneyName,
 		tournament: {
 			name: 'renamed test tournet'
 		},
@@ -207,7 +208,7 @@ function mupdate() {
 //show();
 //update();
 //destroy();
-//start();
+start();
 //finalize();
 //reset();
 
@@ -216,7 +217,7 @@ function mupdate() {
 //pshow();
 //pupdate();
 //pdestroy();
-prandomize();
+//prandomize();
 
 //mindex();
 //mshow();

@@ -51,10 +51,6 @@ client.tournaments.create({
 ###Challonge docs: http://api.challonge.com/v1
 
 ##TODO
-* move /v1/tournaments to config
-* abstract path suffix for partcipants, matches
-* abstract destroy of qs params
-
 2. support camelCase -> under_score params
 3. validate required params
 4. docs
