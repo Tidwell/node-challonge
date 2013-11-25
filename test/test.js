@@ -202,9 +202,9 @@ function mupdate() {
 
 
 
-//index();
+index();
 //create();
-show();
+//show();
 //update();
 //destroy();
 //start();

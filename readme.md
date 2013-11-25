@@ -92,6 +92,9 @@ Also, I think the server might be sending an invalid content-length header on ra
 [Error: Parse Error] bytesParsed: 0, code: 'HPE_INVALID_CONSTANT' in node.
 ```
 
+hrm, works via curl:
+curl -d ''  https://tidwell:key@api.challonge.com/v1/tournaments/sometesttourney1/participants/randomize.json
+
 ---
 
 ####The structure of this api wrapper is ripped off from https://github.com/nodejitsu/nodejitsu-api
