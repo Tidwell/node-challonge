@@ -1,7 +1,6 @@
 var challonge = require('./../');
 
 var client = challonge.createClient({
-	username: 'tidwell',
 	apiKey: require('./../key.js'),
 	format: 'json'
 });
