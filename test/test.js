@@ -1,6 +1,7 @@
 var challonge = require('./../');
 
 var client = challonge.createClient({
+	username: 'tidwell',
 	apiKey: require('./../key.js'),
 	format: 'json'
 });
@@ -202,7 +203,7 @@ function mupdate() {
 
 
 
-index();
+//index();
 //create();
 //show();
 //update();
@@ -216,7 +217,7 @@ index();
 //pshow();
 //pupdate();
 //pdestroy();
-//prandomize();
+prandomize();
 
 //mindex();
 //mshow();
