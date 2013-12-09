@@ -27,18 +27,28 @@ The wrapper is organized into resource.method to match the API
 
 For API calls that require nested params (eg: http://api.challonge.com/v1/documents/tournaments/create) properties should be specified as a nested config option.
 
+All properties can be specified camelCase instead of using under_scores Both of the following are valid:
+```
+tournament: { tournamentType: 'single elimination' }
+
+tournament: { tournament_type: 'single elimination' }
+
+```
+
+##Example
+
 ```
 var challonge = require('./node-challonge');
 
 var client = challonge.createClient({
-	apiKey: '***yourAPIKey***'
+	apiKey: '***yourAPIKey***',
 });
+
 client.tournaments.create({
 	tournament: {
 		name: 'new_tournament_name',
 		url: 'new_tournament_url',  //also can be used as id
-		tournament_type: 'single elimination',
-		subdomain: 'challongeOrganizationSubdomain' //optional (must be passed or setSubdomain called for use with organizations), used to automatically pass tournament[subdomain] and prefixes to tournament urls
+		tournamentType: 'single elimination',
 	},
 	callback: function(err,data){
 		if (err) { console.log(err); return; }
@@ -51,6 +61,29 @@ client.tournaments.create({
 ---
 ###Challonge docs: http://api.challonge.com/v1
 
+
+##Docs
+
+createClient(obj)
+--------------
+
+Returns an instance of the api client, configured by object
+
+@arguments
+
+obj.apiKey: - string (required)
+	
+	Your challonge API Key
+
+obj.subdomain - string (optional)
+	
+	Setting the subdomain automatically passes tournament[subdomain] and prefixes the subdomain to tournament urls.  If you don't want to pass a subdomain to the constructor, and want to use an organization (or multiple organizations), you must use client.setSubdomain('subdomain') before making api calls.
+
+obj.format: - string (optional)
+	
+	The format of the response data. Defaults to 'json'.  If set to 'json', will return javascript objects.  'xml' will return the raw text string.
+
+
 ##TODO
 1. validate required params
 2. docs
@@ -60,8 +93,6 @@ client.tournaments.create({
 
 ##Bugs in the API / docs
 server 500s if trying to finalize() a tournament that has not yet been start()ed
-
-http://api.challonge.com/v1 shows particpants.randomize as GET when method is actually POST
 
 http://api.challonge.com/v1/documents/participants/create shows participant_id as a required field when the server does not respect passing it, and is not required.
 
