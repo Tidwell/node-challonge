@@ -80,15 +80,14 @@ tournament: { tournament_type: 'single elimination' }
 2. docs
 3. tests
 
----
 
 ##Bugs in the API / docs
-server 500s if trying to finalize() a tournament that has not yet been start()ed
+ *server 500s if trying to finalize() a tournament that has not yet been start()ed
 
-http://api.challonge.com/v1/documents/participants/create shows participant_id as a required field when the server does not respect passing it, and is not required.
+ *http://api.challonge.com/v1/documents/participants/create shows participant_id as a required field when the server does not respect passing it, and is not required.
 
-http://api.challonge.com/v1/documents/participants/randomize shows participant_id as a required field when the server does not respect passing it, and is not required.
+ *http://api.challonge.com/v1/documents/participants/randomize shows participant_id as a required field when the server does not respect passing it, and is not required.
 
----
+##
 
-####The structure of this api wrapper is ripped off from https://github.com/nodejitsu/nodejitsu-api
+The structure of this api wrapper is ripped off from https://github.com/nodejitsu/nodejitsu-api
