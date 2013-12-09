@@ -52,10 +52,9 @@ client.tournaments.create({
 ###Challonge docs: http://api.challonge.com/v1
 
 ##TODO
-2. support camelCase -> under_score params
-3. validate required params
-4. docs
-5. tests
+1. validate required params
+2. docs
+3. tests
 
 ---
 

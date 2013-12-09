@@ -6,7 +6,7 @@ var client = challonge.createClient({
 	version: 1,
 });
 
-var tourneyName = 'nodeapitest3';
+var tourneyName = 'nodeapitestCamel';
 
 function index() {
 	client.tournaments.index({
@@ -22,8 +22,8 @@ function create() {
 		tournament: {
 			name: 'name-'+tourneyName,
 			url: tourneyName,
-			signup_cap: 8,
-			tournament_type: 'single elimination',
+			signupCap: 8,
+			tournamentType: 'single elimination',
 		},
 		callback: function(err,data){
 			if (err) { console.log(err); return; }
@@ -204,7 +204,7 @@ function mupdate() {
 
 
 //index();
-client.setSubdomain('nodeapitest');
+//client.setSubdomain('nodeapitest');
 create();
 //show();
 //update();
