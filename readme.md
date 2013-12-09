@@ -1,10 +1,6 @@
-####This is in very early alpha
----
-##super basic example
+##Usage
 
-checkout this repo into ./
-
-To get all tournaments on your account:
+###Get all tournaments on your account
 
 ```
 var challonge = require('./node-challonge');
@@ -15,7 +11,7 @@ var client = challonge.createClient({
 
 
 client.tournaments.index({
-	callback: function(err,data){
+	callback: function(err, data){
 		if (err) { console.log(err); return; }
 		console.log(data);
 	}
@@ -23,48 +19,32 @@ client.tournaments.index({
 
 ```
 
-The wrapper is organized into resource.method to match the API
-
-For API calls that require nested params (eg: http://api.challonge.com/v1/documents/tournaments/create) properties should be specified as a nested config option.
-
-All properties can be specified camelCase instead of using under_scores Both of the following are valid:
-```
-tournament: { tournamentType: 'single elimination' }
-
-tournament: { tournament_type: 'single elimination' }
-
-```
-
-##Example
-
+###Create a tournament
 ```
 var challonge = require('./node-challonge');
 
+// create a new instance of the client
 var client = challonge.createClient({
 	apiKey: '***yourAPIKey***',
 });
 
+// create a tournament
 client.tournaments.create({
 	tournament: {
 		name: 'new_tournament_name',
-		url: 'new_tournament_url',  //also can be used as id
+		url: 'new_tournament_url',
 		tournamentType: 'single elimination',
 	},
-	callback: function(err,data){
+	callback: function(err, data){
 		if (err) { console.log(err); return; }
 		console.log(data);
 	}
 });
 ```
----
-###test/test.js has examples of all the api methods.
----
-###Challonge docs: http://api.challonge.com/v1
 
+##API Client
 
-##Docs
-
-createClient takes one argument for configuration and returns an instance of the api client. The configuration object can contain the following options:
+_createClient_ takes one argument for configuration and returns an instance of the api client. The configuration object can contain the following options:
 
  * `apiKey` string (required) - Your challonge API Key
 
@@ -72,6 +52,28 @@ createClient takes one argument for configuration and returns an instance of the
 
  * `format` string (optional) - The format of the response data. Defaults to 'json'.  If set to 'json', will return javascript objects.  'xml' will return the raw text string.
 
+
+The wrapper is organized into resource.method to match the API
+
+For API calls that require nested params (eg: http://api.challonge.com/v1/documents/tournaments/create) properties should be specified as a nested config option:
+```
+{
+	tournament: {
+		name: 'new_tournament_name',
+		url: 'new_tournament_url',
+		tournamentType: 'single elimination',
+	},
+	callback: function(err, data){}
+}
+```
+
+All properties can be specified camelCase instead of using under_scores Both of the following are valid:
+```
+tournament: { tournamentType: 'single elimination' }
+```
+```
+tournament: { tournament_type: 'single elimination' }
+```
 
 ##TODO
 1. validate required params
