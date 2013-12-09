@@ -6,7 +6,7 @@ var client = challonge.createClient({
 	version: 1,
 });
 
-var tourneyName = 'nodeapitestcamel';
+var tourneyName = 'nodeapite3stcamel';
 
 function index() {
 	client.tournaments.index({
@@ -108,9 +108,8 @@ function pindex() {
 function pcreate() {
 	client.participants.create({
 		id: tourneyName,
-		participantId: 'arbitraryid',
 		participant: {
-			name: 'Tidwell'
+			name: 'Tidwell345678901239331'
 		},
 		callback: function(err,data){
 			if (err) { console.log(err); return; }
@@ -191,8 +190,8 @@ function mupdate() {
 		id: tourneyName,
 		matchId: 15606254,
 		match: {
-			scores_csv: '3-0',
-			winner_id: 10847219
+			scoresCsv: '3-0',
+			winnerId: 10847219
 		},
 		callback: function(err,data){
 			if (err) { console.log(err); return; }
@@ -215,6 +214,7 @@ create();
 
 
 //pindex();
+//pcreate();
 //pshow();
 //pupdate();
 //pdestroy();
