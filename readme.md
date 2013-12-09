@@ -38,6 +38,7 @@ client.tournaments.create({
 		name: 'new_tournament_name',
 		url: 'new_tournament_url',  //also can be used as id
 		tournament_type: 'single elimination',
+		subdomain: 'challongeOrganizationSubdomain' //optional (must be passed or setSubdomain called for use with organizations), used to automatically pass tournament[subdomain] and prefixes to tournament urls
 	},
 	callback: function(err,data){
 		if (err) { console.log(err); return; }

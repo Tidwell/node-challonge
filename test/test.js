@@ -3,10 +3,10 @@ var challonge = require('./../');
 var client = challonge.createClient({
 	apiKey: require('./../key.js'),
 	format: 'json',
-	version: 1
+	version: 1,
 });
 
-var tourneyName = 'adfasdfasdf3333';
+var tourneyName = 'nodeapitest3';
 
 function index() {
 	client.tournaments.index({
@@ -122,7 +122,7 @@ function pcreate() {
 function pshow() {
 	client.participants.show({
 		id: tourneyName,
-		participantId: 10846707,
+		participantId: 11150708,
 		callback: function(err,data){
 			if (err) { console.log(err); return; }
 			console.log(data);
@@ -133,7 +133,7 @@ function pshow() {
 function pupdate() {
 	client.participants.update({
 		id: tourneyName,
-		participantId: 10846707,
+		participantId: 11150708,
 		participant: {
 			name: 'updatdguy'
 		},
@@ -204,11 +204,12 @@ function mupdate() {
 
 
 //index();
-//create();
+client.setSubdomain('nodeapitest');
+create();
 //show();
 //update();
 //destroy();
-start();
+//start();
 //finalize();
 //reset();
 
