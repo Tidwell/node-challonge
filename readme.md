@@ -64,24 +64,13 @@ client.tournaments.create({
 
 ##Docs
 
-createClient(obj)
---------------
+createClient takes one argument for configuration and returns an instance of the api client. The configuration object can contain the following options:
 
-Returns an instance of the api client, configured by object
+	* `apiKey` string (required) - Your challonge API Key
 
-@arguments
+	* `subdomain` string (optional) - Setting the subdomain automatically passes tournament[subdomain] and prefixes the subdomain to tournament urls.  If you don't want to pass a subdomain to the constructor, and want to use an organization (or multiple organizations), you must use client.setSubdomain('subdomain') before making api calls.
 
-obj.apiKey: - string (required)
-	
-	Your challonge API Key
-
-obj.subdomain - string (optional)
-	
-	Setting the subdomain automatically passes tournament[subdomain] and prefixes the subdomain to tournament urls.  If you don't want to pass a subdomain to the constructor, and want to use an organization (or multiple organizations), you must use client.setSubdomain('subdomain') before making api calls.
-
-obj.format: - string (optional)
-	
-	The format of the response data. Defaults to 'json'.  If set to 'json', will return javascript objects.  'xml' will return the raw text string.
+	* `format` string (optional) - The format of the response data. Defaults to 'json'.  If set to 'json', will return javascript objects.  'xml' will return the raw text string.
 
 
 ##TODO
