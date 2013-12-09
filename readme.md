@@ -91,6 +91,6 @@ Some minor gatchas:
 
  * http://api.challonge.com/v1/documents/participants/randomize shows participant_id as a required field when the server does not respect passing it, and is not required.
 
-##
+--
 
 The structure of this api wrapper is ripped off from https://github.com/nodejitsu/nodejitsu-api
