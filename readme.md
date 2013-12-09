@@ -82,6 +82,9 @@ tournament: { tournament_type: 'single elimination' }
 
 
 ##Bugs in the API / docs
+
+Some minor gatchas:
+
  * server 500s if trying to finalize() a tournament that has not yet been start()ed
 
  * http://api.challonge.com/v1/documents/participants/create shows participant_id as a required field when the server does not respect passing it, and is not required.
