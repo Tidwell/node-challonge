@@ -52,6 +52,7 @@ _createClient_ takes one argument for configuration and returns an instance of t
 
  * `format` string (optional) - The format of the response data. Defaults to 'json'.  If set to 'json', will return javascript objects.  'xml' will return the raw text string.
 
+ * `massageProperties` boolean (optional) - If the response object should be massaged into camelCase properties when using json format.  Defaults to true.
 
 The wrapper is organized into resource.method to match the API
 
