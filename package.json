@@ -1,5 +1,5 @@
 {
-  "name": "node-challonge",
+  "name": "challonge",
   "description": "Wrapper for the challong api",
   "author": "Aaron Tiwell <aaron.tidwell@gmail.com>",
   "main": "./lib/challonge.js",

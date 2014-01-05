@@ -56,7 +56,7 @@ _createClient_ takes one argument for configuration and returns an instance of t
 
 The wrapper is organized into resource.method to match the API
 
-For API calls that require nested params (eg: http://api.challonge.com/v1/documents/tournaments/create) properties should be specified as a nested config option:
+For API calls that require nested params (eg: http://api.challonge.com/v1/documents/tournaments/create) properties should be specified as a nested object:
 ```
 {
 	tournament: {
