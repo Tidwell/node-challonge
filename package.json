@@ -3,6 +3,7 @@
   "description": "Wrapper for the challong api",
   "author": "Aaron Tiwell <aaron.tidwell@gmail.com>",
   "main": "./lib/challonge.js",
+  "version": "1.0.0",
   "dependencies": {
   },
   "devDependencies": {
