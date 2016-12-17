@@ -3,42 +3,37 @@
 ###Get all tournaments on your account
 
 ```js
-var challonge = require('./node-challonge');
-
-var client = challonge.createClient({
-	apiKey: '***yourAPIKey***'
+const challonge = require('./node-challonge');
+const client = challonge.createClient({
+  apiKey: '<yourApiKey>'
 });
 
-
 client.tournaments.index({
-	callback: function(err, data){
-		if (err) { console.log(err); return; }
-		console.log(data);
-	}
+  callback: function (error, data) {
+    if (error) { console.log(error); return; }
+    console.log(data);
+  }
 });
 
 ```
 
 ###Create a tournament
 ```js
-var challonge = require('./node-challonge');
-
-// create a new instance of the client
-var client = challonge.createClient({
-	apiKey: '***yourAPIKey***',
+const challonge = require('./node-challonge');
+const client = challonge.createClient({
+  apiKey: '<yourApiKey>'
 });
 
-// create a tournament
 client.tournaments.create({
-	tournament: {
-		name: 'new_tournament_name',
-		url: 'new_tournament_url',
-		tournamentType: 'single elimination',
-	},
-	callback: function(err, data){
-		if (err) { console.log(err); return; }
-		console.log(data);
-	}
+  tournament: {
+    name: 'new_tournament_name',
+    url: 'new_tournament_url',
+    tournamentType: 'single elimination'
+  },
+  callback: function (error, data) {
+    if (error) { console.log(error); return; }
+    console.log(data);
+  }
 });
 ```
 
@@ -62,9 +57,9 @@ For API calls that require nested params (eg: http://api.challonge.com/v1/docume
 	tournament: {
 		name: 'new_tournament_name',
 		url: 'new_tournament_url',
-		tournamentType: 'single elimination',
+		tournamentType: 'single elimination'
 	},
-	callback: function(err, data){}
+	callback: function (error, data) {}
 }
 ```
 
