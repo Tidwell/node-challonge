@@ -1,12 +1,28 @@
 {
   "name": "challonge",
-  "description": "Wrapper for the challong api",
-  "author": "Aaron Tiwell <aaron.tidwell@gmail.com>",
+  "description": "Wrapper for the challonge api",
+  "author": {
+    "name": "Aaron Tiwell",
+    "email": "aaron.tidwell@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Jonas Vanen",
+      "email": "jonas.vanen@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonas-vanen/node-challonge"
+  },
+  "keywords": [
+    "challonge",
+    "api-wrapper",
+    "wrapper"
+  ],
   "main": "./lib/challonge.js",
-  "version": "1.0.0",
-  "dependencies": {
-  },
-  "devDependencies": {
-  },
+  "version": "1.1.0",
+  "dependencies": {},
+  "devDependencies": {},
   "engine": "node >= 0.10.x"
 }
