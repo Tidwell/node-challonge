@@ -95,3 +95,4 @@ Some minor gatchas:
 ---
 
 The structure of this api wrapper is ripped off from https://github.com/nodejitsu/nodejitsu-api
+This repository was forked from https://github.com/Tidwell/node-challonge
