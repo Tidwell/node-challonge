@@ -3,7 +3,7 @@
 ###Get all tournaments on your account
 
 ```js
-const challonge = require('./node-challonge');
+const challonge = require('challonge-js');
 const client = challonge.createClient({
   apiKey: '<yourApiKey>'
 });
@@ -19,7 +19,7 @@ client.tournaments.index({
 
 ###Create a tournament
 ```js
-const challonge = require('./node-challonge');
+const challonge = require('challonge-js');
 const client = challonge.createClient({
   apiKey: '<yourApiKey>'
 });
