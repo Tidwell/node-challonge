@@ -1,6 +1,6 @@
-##Usage
+## Usage
 
-###Get all tournaments on your account
+### Get all tournaments on your account
 
 ```
 var challonge = require('./node-challonge');
@@ -19,7 +19,7 @@ client.tournaments.index({
 
 ```
 
-###Create a tournament
+### Create a tournament
 ```
 var challonge = require('./node-challonge');
 
@@ -42,7 +42,7 @@ client.tournaments.create({
 });
 ```
 
-##API Client
+## API Client
 
 _createClient_ takes one argument for configuration and returns an instance of the api client. The configuration object can contain the following options:
 
@@ -76,21 +76,17 @@ tournament: { tournamentType: 'single elimination' }
 tournament: { tournament_type: 'single elimination' }
 ```
 
-##TODO
+## TODO
 1. validate required params
 2. docs
 3. tests
 
 
-##Bugs in the API / docs
+## Bugs in the API / docs
 
 Some minor gatchas:
 
  * server 500s if trying to finalize() a tournament that has not yet been start()ed
-
- * http://api.challonge.com/v1/documents/participants/create shows participant_id as a required field when the server does not respect passing it, and is not required.
-
- * http://api.challonge.com/v1/documents/participants/randomize shows participant_id as a required field when the server does not respect passing it, and is not required.
 
 ---
 

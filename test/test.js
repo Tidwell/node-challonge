@@ -1,12 +1,12 @@
 var challonge = require('./../');
 
 var client = challonge.createClient({
-	apiKey: require('./../key.js'),
+	apiKey: require('./../key.js').challonge,
 	format: 'json',
 	version: 1,
 });
 
-var tourneyName = 'nodeapite3stcamel';
+var tourneyName = 'nodeapite3stcamel24333341111';
 
 function index() {
 	client.tournaments.index({
@@ -203,7 +203,7 @@ function mupdate() {
 
 
 //index();
-//client.setSubdomain('nodeapitest');
+client.setSubdomain('nodeapitest');
 create();
 //show();
 //update();
