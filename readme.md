@@ -2,7 +2,7 @@
 
 ### Get all tournaments on your account
 
-```
+```js
 var challonge = require('./node-challonge');
 
 var client = challonge.createClient({
@@ -20,7 +20,7 @@ client.tournaments.index({
 ```
 
 ### Create a tournament
-```
+```js
 var challonge = require('./node-challonge');
 
 // create a new instance of the client
@@ -57,7 +57,8 @@ _createClient_ takes one argument for configuration and returns an instance of t
 The wrapper is organized into resource.method to match the API
 
 For API calls that require nested params (eg: http://api.challonge.com/v1/documents/tournaments/create) properties should be specified as a nested object:
-```
+
+```js
 {
 	tournament: {
 		name: 'new_tournament_name',
@@ -69,10 +70,11 @@ For API calls that require nested params (eg: http://api.challonge.com/v1/docume
 ```
 
 All properties can be specified camelCase instead of using under_scores Both of the following are valid:
-```
+
+```js
 tournament: { tournamentType: 'single elimination' }
 ```
-```
+```js
 tournament: { tournament_type: 'single elimination' }
 ```
 
