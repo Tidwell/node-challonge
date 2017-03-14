@@ -82,18 +82,18 @@ tournament: { tournament_type: 'single elimination' }
 
 ### Install
 
-``bash
+```bash
  $ git clone https://github.com/Tidwell/node-challonge
  $ cd node-challonge
  $ npm install
-``
+```
 
 ### Run Tests
 [![Build Status](https://travis-ci.org/Tidwell/node-challonge.svg?branch=master)](https://travis-ci.org/Tidwell/node-challonge)
 
-``bash
+```bash
 $ npm test
-``
+```
 
 ## TODO
 1. validate required params
