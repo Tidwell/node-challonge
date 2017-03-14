@@ -23,9 +23,14 @@
     "api-wrapper",
     "wrapper"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
+    "istanbul": "^0.4.5",
+    "jasmine": "^2.5.3"
+  },
+  "scripts": {
+    "test": "./node_modules/jasmine/bin/jasmine.js",
+    "coverage": "node ./node_modules/istanbul/lib/cli.js cover --include-all-sources ./node_modules/jasmine/bin/jasmine.js"
   },
   "engine": "node >= 0.10.x"
 }
