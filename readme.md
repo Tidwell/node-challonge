@@ -9,7 +9,7 @@ $ npm install challonge --save
 ### Get all tournaments on your account
 
 ```js
-var challonge = require('./node-challonge');
+var challonge = require('challonge');
 
 var client = challonge.createClient({
 	apiKey: '***yourAPIKey***'
@@ -101,18 +101,10 @@ tournament: { tournament_type: 'single elimination' }
 $ npm test
 ```
 
-## TODO
-1. validate required params
-2. docs
-3. tests
+### Issue Tracking
 
+Issues are tracked on github: https://github.com/Tidwell/node-challonge/issues
 
-## Bugs in the API / docs
-
-Some minor gatchas:
-
- * server 500s if trying to finalize() a tournament that has not yet been start()ed
-
----
+The [Zenhub Browser Plugin](https://www.zenhub.com/) is used to organize issues.
 
 The structure of this api wrapper is ripped off from https://github.com/nodejitsu/nodejitsu-api
