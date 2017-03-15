@@ -108,3 +108,10 @@ Issues are tracked on github: https://github.com/Tidwell/node-challonge/issues
 The [Zenhub Browser Plugin](https://www.zenhub.com/) is used to organize issues.
 
 The structure of this api wrapper is ripped off from https://github.com/nodejitsu/nodejitsu-api
+
+
+### Branching
+
+``master`` is the active development branch
+
+``live`` is the latest published build on npm
