@@ -1,5 +1,11 @@
 ## Usage
 
+### Install
+
+```bash
+$ npm install challonge --save
+```
+
 ### Get all tournaments on your account
 
 ```js
