@@ -3,7 +3,7 @@
   "description": "Wrapper for the challong api",
   "author": "Aaron Tiwell <aaron.tidwell@gmail.com>",
   "main": "./lib/challonge.js",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "contributors": [
     {
       "name": "Ricardo Reis",
@@ -18,6 +18,10 @@
     "type": "git",
     "url": "https://github.com/Tidwell/node-challonge"
   },
+  "bugs": {
+    "url": "https://github.com/Tidwell/node-challonge/issues"
+  },
+  "homepage": "https://github.com/Tidwell/node-challonge#README",
   "keywords": [
     "challonge",
     "api-wrapper",
