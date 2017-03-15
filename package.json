@@ -26,7 +26,8 @@
   "dependencies": {},
   "devDependencies": {
     "istanbul": "^0.4.5",
-    "jasmine": "^2.5.3"
+    "jasmine": "^2.5.3",
+    "mockery": "^2.0.0"
   },
   "scripts": {
     "test": "./node_modules/jasmine/bin/jasmine.js",
