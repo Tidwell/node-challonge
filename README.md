@@ -27,7 +27,7 @@ client.tournaments.index({
 
 ### Create a tournament
 ```js
-var challonge = require('./node-challonge');
+var challonge = require('challonge');
 
 // create a new instance of the client
 var client = challonge.createClient({
