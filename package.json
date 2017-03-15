@@ -3,10 +3,28 @@
   "description": "Wrapper for the challong api",
   "author": "Aaron Tiwell <aaron.tidwell@gmail.com>",
   "main": "./lib/challonge.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
+    "request": "^2.67.0"
   },
   "devDependencies": {
+        "jshint": "^2.8.0"
   },
-  "engine": "node >= 0.10.x"
+  "engine": "node >= 0.10.x",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "jshint --show-non-errors lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tidwell/node-challonge.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tidwell/node-challonge/issues"
+  },
+  "homepage": "https://github.com/Tidwell/node-challonge#readme"
 }
