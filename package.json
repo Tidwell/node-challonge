@@ -22,7 +22,6 @@
     "type": "git",
     "url": "git+https://github.com/Tidwell/node-challonge.git"
   },
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Tidwell/node-challonge/issues"
   },
