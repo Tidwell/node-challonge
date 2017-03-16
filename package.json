@@ -4,16 +4,13 @@
   "author": "Aaron Tiwell <aaron.tidwell@gmail.com>",
   "main": "./lib/challonge.js",
   "version": "1.2.0",
-  "contributors": [
-    {
-      "name": "Ricardo Reis",
-      "email": "ricardojoaoreis@gmail.com"
-    },
-    {
-      "name": "Jonas Vanen",
-      "email": "jonas.vanen@gmail.com"
-    }
-  ],
+  "contributors": [{
+    "name": "Ricardo Reis",
+    "email": "ricardojoaoreis@gmail.com"
+  }, {
+    "name": "Jonas Vanen",
+    "email": "jonas.vanen@gmail.com"
+  }],
   "repository": {
     "type": "git",
     "url": "https://github.com/Tidwell/node-challonge"
@@ -35,7 +32,7 @@
   },
   "scripts": {
     "test": "./node_modules/jasmine/bin/jasmine.js",
-    "coverage": "node ./node_modules/istanbul/lib/cli.js cover --include-all-sources ./node_modules/jasmine/bin/jasmine.js"
+    "coverage": "node ./node_modules/istanbul/lib/cli.js cover --include-all-sources ./node_modules/jasmine/bin/jasmine.js -x '**/spec/**' -x '**/key.js'"
   },
   "engine": "node >= 0.10.x"
 }
