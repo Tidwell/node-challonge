@@ -1,7 +1,7 @@
 const mockery = require('mockery');
 mockery.enable({
 	warnOnReplace: false,
-    warnOnUnregistered: false
+	warnOnUnregistered: false
 });
 
 const httpsMock = {
@@ -15,7 +15,9 @@ const httpsMock = {
 	},
 	res: {
 		on: (method, cb) => {
-			if (!httpsMock.listeners[method]) { httpsMock.listeners[method] = []; }
+			if (!httpsMock.listeners[method]) {
+				httpsMock.listeners[method] = [];
+			}
 			httpsMock.listeners[method].push(cb);
 		}
 	},
@@ -24,7 +26,8 @@ const httpsMock = {
 		pipe(this.res);
 
 		return {
-			end: () => {}
+			end: () => {
+			}
 		};
 	}
 };

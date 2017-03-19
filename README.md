@@ -101,6 +101,22 @@ tournament: { tournament_type: 'single elimination' }
 $ npm test
 ```
 
+### Run JsFmt/JsHint
+
+```bash
+$ npm run-script format
+```
+
+```bash
+$ npm run-script lint
+```
+
+### All (travis integration tests)
+
+```bash
+$ npm run-script integrate
+```
+
 ### Issue Tracking
 
 Issues are tracked on github: https://github.com/Tidwell/node-challonge/issues
