@@ -12,15 +12,14 @@ $ npm install challonge --save
 var challonge = require('challonge');
 
 var client = challonge.createClient({
-	apiKey: '***yourAPIKey***'
+  apiKey: '***yourAPIKey***'
 });
 
-
 client.tournaments.index({
-	callback: function(err, data){
-		if (err) { console.log(err); return; }
-		console.log(data);
-	}
+  callback: function(err, data){
+    if (err) { console.log(err); return; }
+	  console.log(data);
+  }
 });
 
 ```
@@ -31,20 +30,20 @@ var challonge = require('challonge');
 
 // create a new instance of the client
 var client = challonge.createClient({
-	apiKey: '***yourAPIKey***',
+  apiKey: '***yourAPIKey***',
 });
 
 // create a tournament
 client.tournaments.create({
-	tournament: {
-		name: 'new_tournament_name',
-		url: 'new_tournament_url',
-		tournamentType: 'single elimination',
-	},
-	callback: function(err, data){
-		if (err) { console.log(err); return; }
-		console.log(data);
-	}
+  tournament: {
+    name: 'new_tournament_name',
+    url: 'new_tournament_url',
+    tournamentType: 'single elimination',
+  },
+  callback: function(err, data){
+    if (err) { console.log(err); return; }
+    console.log(data);
+  }
 });
 ```
 
