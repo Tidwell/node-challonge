@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li><li><a href="Matches.html">Matches</a><ul class='methods'><li data-type='method'><a href="Matches.html#index">index</a></li><li data-type='method'><a href="Matches.html#show">show</a></li><li data-type='method'><a href="Matches.html#update">update</a></li></ul></li><li><a href="Participants.html">Participants</a><ul class='methods'><li data-type='method'><a href="Participants.html#create">create</a></li><li data-type='method'><a href="Participants.html#destroy">destroy</a></li><li data-type='method'><a href="Participants.html#index">index</a></li><li data-type='method'><a href="Participants.html#randomize">randomize</a></li><li data-type='method'><a href="Participants.html#show">show</a></li><li data-type='method'><a href="Participants.html#update">update</a></li></ul></li><li><a href="Tournaments.html">Tournaments</a><ul class='methods'><li data-type='method'><a href="Tournaments.html#create">create</a></li><li data-type='method'><a href="Tournaments.html#destroy">destroy</a></li><li data-type='method'><a href="Tournaments.html#finalize">finalize</a></li><li data-type='method'><a href="Tournaments.html#index">index</a></li><li data-type='method'><a href="Tournaments.html#reset">reset</a></li><li data-type='method'><a href="Tournaments.html#show">show</a></li><li data-type='method'><a href="Tournaments.html#start">start</a></li><li data-type='method'><a href="Tournaments.html#update">update</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-ErrorHandler.html">ErrorHandler</a><ul class='methods'><li data-type='method'><a href="module-ErrorHandler.html#.handle">handle</a></li></ul></li><li><a href="module-Util.html">Util</a><ul class='methods'><li data-type='method'><a href="module-Util.html#.serializeToQSParams">serializeToQSParams</a></li><li data-type='method'><a href="module-Util.html#~camelToUnderscore">camelToUnderscore</a></li><li data-type='method'><a href="module-Util.html#~convert">convert</a></li><li data-type='method'><a href="module-Util.html#~underscoreToCamel">underscoreToCamel</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#createClientoptions">createClient</a></li></ul>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    <section class="readme">
+        <article><h2>Usage</h2><h3>Install</h3><pre class="prettyprint source lang-bash"><code>$ npm install challonge --save</code></pre><h3>Get all tournaments on your account</h3><pre class="prettyprint source lang-js"><code>const challonge = require('challonge');
+
+const client = challonge.createClient({
+  apiKey: '***yourAPIKey***'
+});
+
+client.tournaments.index({
+  callback: (err, data) => {
+      console.log(err, data);
+  }
+});</code></pre><h3>Create a tournament</h3><pre class="prettyprint source lang-js"><code>const challonge = require('challonge');
+
+// create a new instance of the client
+const client = challonge.createClient({
+  apiKey: '***yourAPIKey***',
+});
+
+// create a tournament
+client.tournaments.create({
+  tournament: {
+    name: 'new_tournament_name',
+    url: 'new_tournament_url',
+    tournamentType: 'single elimination',
+  },
+  callback: (err, data) => {
+    console.log(err, data);
+  }
+});</code></pre><h2>API Client</h2><p><em>createClient</em> takes one argument for configuration and returns an instance of the api client. The configuration object can contain the following options:</p>
+<ul>
+<li><p><code>apiKey</code> string (required) - Your challonge API Key</p>
+</li>
+<li><p><code>subdomain</code> string (optional) - Setting the subdomain automatically passes tournament[subdomain] and prefixes the subdomain to tournament urls.  If you don't want to pass a subdomain to the constructor, and want to use an organization (or multiple organizations), you must use client.setSubdomain('subdomain') before making api calls.</p>
+</li>
+<li><p><code>format</code> string (optional) - The format of the response data. Defaults to 'json'.  If set to 'json', will return javascript objects.  'xml' will return the raw text string.</p>
+</li>
+<li><p><code>massageProperties</code> boolean (optional) - If the response object should be massaged into camelCase properties when using json format.  Defaults to true.</p>
+</li>
+</ul>
+<p>The wrapper is organized into resource.method to match the API</p>
+<p>For API calls that require nested params (eg: http://api.challonge.com/v1/documents/tournaments/create) properties should be specified as a nested object:</p>
+<pre class="prettyprint source lang-js"><code>{
+  tournament: {
+    name: 'new_tournament_name',
+    url: 'new_tournament_url',
+    tournamentType: 'single elimination',
+  },
+  callback: (err, data) => {}
+}</code></pre><p>All properties can be specified camelCase instead of using under_scores Both of the following are valid:</p>
+<pre class="prettyprint source lang-js"><code>tournament: { tournamentType: 'single elimination' }</code></pre><pre class="prettyprint source lang-js"><code>tournament: { tournament_type: 'single elimination' }</code></pre><h2>Development</h2><h3>Install</h3><pre class="prettyprint source lang-bash"><code> $ git clone https://github.com/Tidwell/node-challonge
+ $ cd node-challonge
+ $ npm install</code></pre><h3>Run Tests</h3><p><a href="https://travis-ci.org/Tidwell/node-challonge"><img src="https://travis-ci.org/Tidwell/node-challonge.svg?branch=master" alt="Build Status"></a></p>
+<pre class="prettyprint source lang-bash"><code>$ npm test</code></pre><h3>Run JsFmt/JsHint</h3><pre class="prettyprint source lang-bash"><code>$ npm run-script format</code></pre><pre class="prettyprint source lang-bash"><code>$ npm run-script lint</code></pre><h3>All (travis integration tests)</h3><pre class="prettyprint source lang-bash"><code>$ npm run-script integrate</code></pre><h3>Issue Tracking</h3><p>Issues are tracked on github: https://github.com/Tidwell/node-challonge/issues</p>
+<p>The <a href="https://www.zenhub.com/">Zenhub Browser Plugin</a> is used to organize issues.</p>
+<p>The structure of this api wrapper is ripped off from https://github.com/nodejitsu/nodejitsu-api</p>
+<h3>Branching</h3><p><code>master</code> is the active development branch</p>
+<p><code>live</code> is the latest published build on npm</p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 20 2017 01:16:37 GMT-0400 (EDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
