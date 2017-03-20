@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li><li><a href="Matches.html">Matches</a><ul class='methods'><li data-type='method'><a href="Matches.html#index">index</a></li><li data-type='method'><a href="Matches.html#show">show</a></li><li data-type='method'><a href="Matches.html#update">update</a></li></ul></li><li><a href="Participants.html">Participants</a><ul class='methods'><li data-type='method'><a href="Participants.html#create">create</a></li><li data-type='method'><a href="Participants.html#destroy">destroy</a></li><li data-type='method'><a href="Participants.html#index">index</a></li><li data-type='method'><a href="Participants.html#randomize">randomize</a></li><li data-type='method'><a href="Participants.html#show">show</a></li><li data-type='method'><a href="Participants.html#update">update</a></li></ul></li><li><a href="Tournaments.html">Tournaments</a><ul class='methods'><li data-type='method'><a href="Tournaments.html#create">create</a></li><li data-type='method'><a href="Tournaments.html#destroy">destroy</a></li><li data-type='method'><a href="Tournaments.html#finalize">finalize</a></li><li data-type='method'><a href="Tournaments.html#index">index</a></li><li data-type='method'><a href="Tournaments.html#reset">reset</a></li><li data-type='method'><a href="Tournaments.html#show">show</a></li><li data-type='method'><a href="Tournaments.html#start">start</a></li><li data-type='method'><a href="Tournaments.html#update">update</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-ErrorHandler.html">ErrorHandler</a><ul class='methods'><li data-type='method'><a href="module-ErrorHandler.html#.handle">handle</a></li></ul></li><li><a href="module-Util.html">Util</a><ul class='methods'><li data-type='method'><a href="module-Util.html#.serializeToQSParams">serializeToQSParams</a></li><li data-type='method'><a href="module-Util.html#~camelToUnderscore">camelToUnderscore</a></li><li data-type='method'><a href="module-Util.html#~convert">convert</a></li><li data-type='method'><a href="module-Util.html#~underscoreToCamel">underscoreToCamel</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#createClientoptions">createClient</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li><li><a href="Matches.html">Matches</a><ul class='methods'><li data-type='method'><a href="Matches.html#index">index</a></li><li data-type='method'><a href="Matches.html#show">show</a></li><li data-type='method'><a href="Matches.html#update">update</a></li></ul></li><li><a href="Participants.html">Participants</a><ul class='methods'><li data-type='method'><a href="Participants.html#create">create</a></li><li data-type='method'><a href="Participants.html#destroy">destroy</a></li><li data-type='method'><a href="Participants.html#index">index</a></li><li data-type='method'><a href="Participants.html#randomize">randomize</a></li><li data-type='method'><a href="Participants.html#show">show</a></li><li data-type='method'><a href="Participants.html#update">update</a></li></ul></li><li><a href="Tournaments.html">Tournaments</a><ul class='methods'><li data-type='method'><a href="Tournaments.html#create">create</a></li><li data-type='method'><a href="Tournaments.html#destroy">destroy</a></li><li data-type='method'><a href="Tournaments.html#finalize">finalize</a></li><li data-type='method'><a href="Tournaments.html#index">index</a></li><li data-type='method'><a href="Tournaments.html#reset">reset</a></li><li data-type='method'><a href="Tournaments.html#show">show</a></li><li data-type='method'><a href="Tournaments.html#start">start</a></li><li data-type='method'><a href="Tournaments.html#update">update</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-ErrorHandler.html">ErrorHandler</a><ul class='methods'><li data-type='method'><a href="module-ErrorHandler.html#.handle">handle</a></li></ul></li><li><a href="module-Util.html">Util</a><ul class='methods'><li data-type='method'><a href="module-Util.html#.serializeToQSParams">serializeToQSParams</a></li><li data-type='method'><a href="module-Util.html#~camelToUnderscore">camelToUnderscore</a></li><li data-type='method'><a href="module-Util.html#~convert">convert</a></li><li data-type='method'><a href="module-Util.html#~underscoreToCamel">underscoreToCamel</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#createClient">createClient</a></li></ul>
 </nav>
 
 <div id="main">
@@ -115,7 +115,7 @@
 
     
 
-    <h4 class="name" id="createClientoptions"><span class="type-signature"></span>createClient<span class="signature">(options)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="createClient"><span class="type-signature"></span>createClient<span class="signature">(options)</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
 
@@ -178,6 +178,15 @@
 
 
 
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const challonge = require('challonge');
+
+const client = challonge.createClient({
+	apiKey: '***yourAPIKey***'
+});</code></pre>
+
+
 
 
     <h5>Parameters:</h5>
@@ -221,7 +230,165 @@
 
             
 
-            <td class="description last">configuration options for this instance</td>
+            <td class="description last">configuration options for this instance
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>apiKey</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Your challonge API Key</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subdomain</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Sets the subdomain and automatically passes tournament[subdomain] and prefixes the subdomain to tournament urls.  If you don't want to pass a subdomain to the constructor, and want to use an organization (or multiple organizations), you must use client.setSubdomain('subdomain') before making api calls.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>format</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The format of the response data. Defaults to 'json'.  If set to 'json', will return javascript objects.  Anything else (including 'xml') will return the raw text string.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>massageProperties</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If the response object should be massaged into camelCase properties when using json format.  Defaults to true.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -283,7 +450,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 20 2017 01:24:42 GMT-0400 (EDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 20 2017 01:36:24 GMT-0400 (EDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
