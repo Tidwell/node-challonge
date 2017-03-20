@@ -6,7 +6,7 @@ var client = challonge.createClient({
 	version: 1,
 });
 
-var tourneyName = 'mytesttournament' + Math.floor(Math.random()*10000);
+var tourneyName = 'new_api_test' + Math.floor(Math.random()*10000);
 
 client.tournaments.create({
 	tournament: {
@@ -19,9 +19,30 @@ client.tournaments.create({
 		if (err) { console.log(err); return; }
 		console.log(data);
 
-		pcreate('player1');
+		update();
 	}
 });
+
+function update() {
+	client.tournaments.update({
+		id: tourneyName,
+		tournament: {
+			name: 'name-'+tourneyName,
+			url: tourneyName,
+			signupCap: 16,
+			tournamentType: 'double elimination',
+			description: 'some new description',
+			acceptAttachments: true
+
+		},
+		callback: function(err,data){
+			if (err) { console.log(err); return; }
+			console.log(data);
+
+			pcreate('player1');
+		}
+	});
+}
 
 function pcreate(name) {
 	client.participants.create({

@@ -6,7 +6,7 @@ var client = challonge.createClient({
 	version: 1,
 });
 
-var tourneyName = 'nodeapite3stcamel24333341111';
+var tourneyName = 'nodeapite3stcamel24333342221111';
 
 function index() {
 	client.tournaments.index({

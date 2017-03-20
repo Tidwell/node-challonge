@@ -65,12 +65,12 @@ For API calls that require nested params (eg: http://api.challonge.com/v1/docume
 
 ```js
 {
-	tournament: {
-		name: 'new_tournament_name',
-		url: 'new_tournament_url',
-		tournamentType: 'single elimination',
-	},
-	callback: function(err, data){}
+  tournament: {
+    name: 'new_tournament_name',
+    url: 'new_tournament_url',
+    tournamentType: 'single elimination',
+  },
+  callback: function(err, data){}
 }
 ```
 
