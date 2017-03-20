@@ -2,6 +2,7 @@
 - Bump node engine to node >= 6.0.x
 - Fix challonge.createClient massageProperties is tautologically true (#2)
 - Fix issues caused by previously published versions switching to request (#3)
+- Added better documentation (#6)
 - Add tests at 100% coverage (#7)
 - Fix Client generating duplicate qs props created for nested objects (#13)
 - Moved helper methods into utilities (#14)
