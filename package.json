@@ -47,7 +47,8 @@
     "lint-spec": "./node_modules/jshint/bin/jshint ./spec",
     "lint": "npm run-script lint-lib && npm run-script lint-spec",
     "integrate": "npm run-script test && npm run-script format && npm run-script lint",
-    "docs": "./node_modules/.bin/jsdoc -r ./lib -d ./docs --readme README.md -t ./node_modules/docdash"
+    "docs": "./node_modules/.bin/jsdoc -r ./lib -d ./docs --readme README.md -t ./node_modules/docdash",
+    "doc-deploy": "git subtree push --prefix docs origin gh-pages"
   },
   "engine": "node >= 6.0.x"
 }
