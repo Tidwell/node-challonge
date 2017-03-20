@@ -9,16 +9,15 @@ $ npm install challonge --save
 ### Get all tournaments on your account
 
 ```js
-var challonge = require('challonge');
+const challonge = require('challonge');
 
-var client = challonge.createClient({
+const client = challonge.createClient({
   apiKey: '***yourAPIKey***'
 });
 
 client.tournaments.index({
-  callback: function(err, data){
-    if (err) { console.log(err); return; }
-	  console.log(data);
+  callback: (err, data) => {
+	  console.log(err, data);
   }
 });
 
@@ -26,10 +25,10 @@ client.tournaments.index({
 
 ### Create a tournament
 ```js
-var challonge = require('challonge');
+const challonge = require('challonge');
 
 // create a new instance of the client
-var client = challonge.createClient({
+const client = challonge.createClient({
   apiKey: '***yourAPIKey***',
 });
 
@@ -40,9 +39,8 @@ client.tournaments.create({
     url: 'new_tournament_url',
     tournamentType: 'single elimination',
   },
-  callback: function(err, data){
-    if (err) { console.log(err); return; }
-    console.log(data);
+  callback: (err, data) => {
+    console.log(err, data);
   }
 });
 ```
@@ -70,7 +68,7 @@ For API calls that require nested params (eg: http://api.challonge.com/v1/docume
     url: 'new_tournament_url',
     tournamentType: 'single elimination',
   },
-  callback: function(err, data){}
+  callback: (err, data) => {}
 }
 ```
 
