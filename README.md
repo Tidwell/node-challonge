@@ -1,3 +1,5 @@
+## [Full Documentation on GH Pages](http://tidwell.github.io/node-challonge/)
+
 ## Usage
 
 ### Install
