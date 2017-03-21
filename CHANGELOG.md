@@ -1,3 +1,7 @@
+### 2.1.0
+- Fix null values being returned as empty objects (#24)
+- Add processCheckIns and abortCheckIn methods to tournament api
+
 ### 2.0
 - Bump node engine to node >= 6.0.x
 - Fix challonge.createClient massageProperties is tautologically true (#2)

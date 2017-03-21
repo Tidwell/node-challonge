@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li><li><a href="Matches.html">Matches</a><ul class='methods'><li data-type='method'><a href="Matches.html#index">index</a></li><li data-type='method'><a href="Matches.html#show">show</a></li><li data-type='method'><a href="Matches.html#update">update</a></li></ul></li><li><a href="Participants.html">Participants</a><ul class='methods'><li data-type='method'><a href="Participants.html#create">create</a></li><li data-type='method'><a href="Participants.html#destroy">destroy</a></li><li data-type='method'><a href="Participants.html#index">index</a></li><li data-type='method'><a href="Participants.html#randomize">randomize</a></li><li data-type='method'><a href="Participants.html#show">show</a></li><li data-type='method'><a href="Participants.html#update">update</a></li></ul></li><li><a href="Tournaments.html">Tournaments</a><ul class='methods'><li data-type='method'><a href="Tournaments.html#create">create</a></li><li data-type='method'><a href="Tournaments.html#destroy">destroy</a></li><li data-type='method'><a href="Tournaments.html#finalize">finalize</a></li><li data-type='method'><a href="Tournaments.html#index">index</a></li><li data-type='method'><a href="Tournaments.html#reset">reset</a></li><li data-type='method'><a href="Tournaments.html#show">show</a></li><li data-type='method'><a href="Tournaments.html#start">start</a></li><li data-type='method'><a href="Tournaments.html#update">update</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-ErrorHandler.html">ErrorHandler</a><ul class='methods'><li data-type='method'><a href="module-ErrorHandler.html#.handle">handle</a></li></ul></li><li><a href="module-Util.html">Util</a><ul class='methods'><li data-type='method'><a href="module-Util.html#.serializeToQSParams">serializeToQSParams</a></li><li data-type='method'><a href="module-Util.html#~camelToUnderscore">camelToUnderscore</a></li><li data-type='method'><a href="module-Util.html#~convert">convert</a></li><li data-type='method'><a href="module-Util.html#~underscoreToCamel">underscoreToCamel</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#createClient">createClient</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li><li><a href="Matches.html">Matches</a><ul class='methods'><li data-type='method'><a href="Matches.html#index">index</a></li><li data-type='method'><a href="Matches.html#show">show</a></li><li data-type='method'><a href="Matches.html#update">update</a></li></ul></li><li><a href="Participants.html">Participants</a><ul class='methods'><li data-type='method'><a href="Participants.html#create">create</a></li><li data-type='method'><a href="Participants.html#destroy">destroy</a></li><li data-type='method'><a href="Participants.html#index">index</a></li><li data-type='method'><a href="Participants.html#randomize">randomize</a></li><li data-type='method'><a href="Participants.html#show">show</a></li><li data-type='method'><a href="Participants.html#update">update</a></li></ul></li><li><a href="Tournaments.html">Tournaments</a><ul class='methods'><li data-type='method'><a href="Tournaments.html#abortCheckIn">abortCheckIn</a></li><li data-type='method'><a href="Tournaments.html#create">create</a></li><li data-type='method'><a href="Tournaments.html#destroy">destroy</a></li><li data-type='method'><a href="Tournaments.html#finalize">finalize</a></li><li data-type='method'><a href="Tournaments.html#index">index</a></li><li data-type='method'><a href="Tournaments.html#processCheckIns">processCheckIns</a></li><li data-type='method'><a href="Tournaments.html#reset">reset</a></li><li data-type='method'><a href="Tournaments.html#show">show</a></li><li data-type='method'><a href="Tournaments.html#start">start</a></li><li data-type='method'><a href="Tournaments.html#update">update</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-ErrorHandler.html">ErrorHandler</a><ul class='methods'><li data-type='method'><a href="module-ErrorHandler.html#.handle">handle</a></li></ul></li><li><a href="module-Util.html">Util</a><ul class='methods'><li data-type='method'><a href="module-Util.html#.serializeToQSParams">serializeToQSParams</a></li><li data-type='method'><a href="module-Util.html#~camelToUnderscore">camelToUnderscore</a></li><li data-type='method'><a href="module-Util.html#~convert">convert</a></li><li data-type='method'><a href="module-Util.html#~underscoreToCamel">underscoreToCamel</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#createClient">createClient</a></li></ul>
 </nav>
 
 <div id="main">
@@ -54,6 +54,8 @@ const Client = require('./client').Client;
  *     start    POST   tournaments/:tournament/start
  *     finalize POST   tournaments/:tournament/finalize
  *     reset    POST   tournaments/:tournament/reset
+ *     process_check_ins    POST    tournaments/:tournament/process_check_ins
+ *     abort_check_in    POST    tournaments/:tournament/abort_check_in
  *   &lt;/pre>
  */
 const Tournaments = exports.Tournaments = function(options) {
@@ -285,6 +287,68 @@ Tournaments.prototype.reset = function(obj) {
 	obj.method = 'POST';
 	this.makeRequest(obj);
 };
+
+/**
+ * @function
+ * @memberof Tournaments
+ * @param  {object} obj params to pass to the api request
+ * @param {string} obj.id The url of the tournament to processCheckIns
+ * @param {function} obj.callback A method to call when the API returns.  Arguments are (error, data)
+ * @description
+ *   This should be invoked after a tournament's check-in window closes before the tournament is started.
+ *   &lt;pre>
+        Marks participants who have not checked in as inactive.
+        Moves inactive participants to bottom seeds (ordered by original seed).
+        Transitions the tournament state from 'checking_in' to 'checked_in'
+        NOTE: Checked in participants on the waiting list will be promoted if slots become available.
+	  &lt;/pre>
+ *   See the {@link http://api.challonge.com/v1/documents/tournaments/process_check_ins|Challonge API Doc} for a full list of object properties.
+ * @example
+
+client.tournaments.processCheckIns({
+  id: 'my-tournament-url',
+  callback: (err, data) => {
+    console.log(err, data);
+  }
+});
+
+ */
+Tournaments.prototype.processCheckIns = function(obj) {
+	obj.path = '/' + this.options.get('subdomain') + obj.id + '/process_check_ins';
+	delete obj.id;
+	obj.method = 'POST';
+	this.makeRequest(obj);
+};
+
+/**
+ * @function
+ * @memberof Tournaments
+ * @param  {object} obj params to pass to the api request
+ * @param {string} obj.id The url of the tournament to abortCheckIn
+ * @param {function} obj.callback A method to call when the API returns.  Arguments are (error, data)
+ * @description
+ *   When your tournament is in a 'checking_in' or 'checked_in' state, there's no way to edit the tournament's start time (start_at) or check-in duration (check_in_duration). You must first abort check-in, then you may edit those attributes.
+ *   &lt;pre>
+        Makes all participants active and clears their checked_in_at times.
+        Transitions the tournament state from 'checking_in' or 'checked_in' to 'pending'
+     &lt;/pre>
+ *   See the {@link http://api.challonge.com/v1/documents/tournaments/abort_check_in|Challonge API Doc} for a full list of object properties.
+ * @example
+
+client.tournaments.abortCheckIn({
+  id: 'my-tournament-url',
+  callback: (err, data) => {
+    console.log(err, data);
+  }
+});
+
+ */
+Tournaments.prototype.abortCheckIn = function(obj) {
+	obj.path = '/' + this.options.get('subdomain') + obj.id + '/abort_check_in';
+	delete obj.id;
+	obj.method = 'POST';
+	this.makeRequest(obj);
+};
 </code></pre>
         </article>
     </section>
@@ -297,7 +361,7 @@ Tournaments.prototype.reset = function(obj) {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 20 2017 01:36:24 GMT-0400 (EDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 20 2017 22:51:32 GMT-0400 (EDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
