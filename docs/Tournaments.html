@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li><li><a href="Matches.html">Matches</a><ul class='methods'><li data-type='method'><a href="Matches.html#index">index</a></li><li data-type='method'><a href="Matches.html#show">show</a></li><li data-type='method'><a href="Matches.html#update">update</a></li></ul></li><li><a href="Participants.html">Participants</a><ul class='methods'><li data-type='method'><a href="Participants.html#create">create</a></li><li data-type='method'><a href="Participants.html#destroy">destroy</a></li><li data-type='method'><a href="Participants.html#index">index</a></li><li data-type='method'><a href="Participants.html#randomize">randomize</a></li><li data-type='method'><a href="Participants.html#show">show</a></li><li data-type='method'><a href="Participants.html#update">update</a></li></ul></li><li><a href="Tournaments.html">Tournaments</a><ul class='methods'><li data-type='method'><a href="Tournaments.html#create">create</a></li><li data-type='method'><a href="Tournaments.html#destroy">destroy</a></li><li data-type='method'><a href="Tournaments.html#finalize">finalize</a></li><li data-type='method'><a href="Tournaments.html#index">index</a></li><li data-type='method'><a href="Tournaments.html#reset">reset</a></li><li data-type='method'><a href="Tournaments.html#show">show</a></li><li data-type='method'><a href="Tournaments.html#start">start</a></li><li data-type='method'><a href="Tournaments.html#update">update</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-ErrorHandler.html">ErrorHandler</a><ul class='methods'><li data-type='method'><a href="module-ErrorHandler.html#.handle">handle</a></li></ul></li><li><a href="module-Util.html">Util</a><ul class='methods'><li data-type='method'><a href="module-Util.html#.serializeToQSParams">serializeToQSParams</a></li><li data-type='method'><a href="module-Util.html#~camelToUnderscore">camelToUnderscore</a></li><li data-type='method'><a href="module-Util.html#~convert">convert</a></li><li data-type='method'><a href="module-Util.html#~underscoreToCamel">underscoreToCamel</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#createClient">createClient</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li><li><a href="Matches.html">Matches</a><ul class='methods'><li data-type='method'><a href="Matches.html#index">index</a></li><li data-type='method'><a href="Matches.html#show">show</a></li><li data-type='method'><a href="Matches.html#update">update</a></li></ul></li><li><a href="Participants.html">Participants</a><ul class='methods'><li data-type='method'><a href="Participants.html#create">create</a></li><li data-type='method'><a href="Participants.html#destroy">destroy</a></li><li data-type='method'><a href="Participants.html#index">index</a></li><li data-type='method'><a href="Participants.html#randomize">randomize</a></li><li data-type='method'><a href="Participants.html#show">show</a></li><li data-type='method'><a href="Participants.html#update">update</a></li></ul></li><li><a href="Tournaments.html">Tournaments</a><ul class='methods'><li data-type='method'><a href="Tournaments.html#abortCheckIn">abortCheckIn</a></li><li data-type='method'><a href="Tournaments.html#create">create</a></li><li data-type='method'><a href="Tournaments.html#destroy">destroy</a></li><li data-type='method'><a href="Tournaments.html#finalize">finalize</a></li><li data-type='method'><a href="Tournaments.html#index">index</a></li><li data-type='method'><a href="Tournaments.html#processCheckIns">processCheckIns</a></li><li data-type='method'><a href="Tournaments.html#reset">reset</a></li><li data-type='method'><a href="Tournaments.html#show">show</a></li><li data-type='method'><a href="Tournaments.html#start">start</a></li><li data-type='method'><a href="Tournaments.html#update">update</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-ErrorHandler.html">ErrorHandler</a><ul class='methods'><li data-type='method'><a href="module-ErrorHandler.html#.handle">handle</a></li></ul></li><li><a href="module-Util.html">Util</a><ul class='methods'><li data-type='method'><a href="module-Util.html#.serializeToQSParams">serializeToQSParams</a></li><li data-type='method'><a href="module-Util.html#~camelToUnderscore">camelToUnderscore</a></li><li data-type='method'><a href="module-Util.html#~convert">convert</a></li><li data-type='method'><a href="module-Util.html#~underscoreToCamel">underscoreToCamel</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#createClient">createClient</a></li></ul>
 </nav>
 
 <div id="main">
@@ -115,6 +115,8 @@
     start    POST   tournaments/:tournament/start
     finalize POST   tournaments/:tournament/finalize
     reset    POST   tournaments/:tournament/reset
+    process_check_ins    POST    tournaments/:tournament/process_check_ins
+    abort_check_in    POST    tournaments/:tournament/abort_check_in
   </pre>
 </div>
 
@@ -214,6 +216,226 @@
 
     
 
+    <h4 class="name" id="abortCheckIn"><span class="type-signature"></span>abortCheckIn<span class="signature">(obj)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line307">line 307</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    When your tournament is in a 'checking_in' or 'checked_in' state, there's no way to edit the tournament's start time (start_at) or check-in duration (check_in_duration). You must first abort check-in, then you may edit those attributes.
+  <pre>
+        Makes all participants active and clears their checked_in_at times.
+        Transitions the tournament state from 'checking_in' or 'checked_in' to 'pending'
+     </pre>
+  See the <a href="http://api.challonge.com/v1/documents/tournaments/abort_check_in">Challonge API Doc</a> for a full list of object properties.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>client.tournaments.abortCheckIn({
+  id: 'my-tournament-url',
+  callback: (err, data) => {
+    console.log(err, data);
+  }
+});</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">params to pass to the api request
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The url of the tournament to abortCheckIn</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A method to call when the API returns.  Arguments are (error, data)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="create"><span class="type-signature"></span>create<span class="signature">(obj)</span><span class="type-signature"></span></h4>
 
     
@@ -226,7 +448,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line82">line 82</a>
+        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line84">line 84</a>
     </li></ul></dd>
     
 
@@ -446,7 +668,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line165">line 165</a>
+        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line167">line 167</a>
     </li></ul></dd>
     
 
@@ -662,7 +884,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line217">line 217</a>
+        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line219">line 219</a>
     </li></ul></dd>
     
 
@@ -878,7 +1100,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line51">line 51</a>
+        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line53">line 53</a>
     </li></ul></dd>
     
 
@@ -1009,6 +1231,228 @@
 
     
 
+    <h4 class="name" id="processCheckIns"><span class="type-signature"></span>processCheckIns<span class="signature">(obj)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line277">line 277</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    This should be invoked after a tournament's check-in window closes before the tournament is started.
+  <pre>
+        Marks participants who have not checked in as inactive.
+        Moves inactive participants to bottom seeds (ordered by original seed).
+        Transitions the tournament state from 'checking_in' to 'checked_in'
+        NOTE: Checked in participants on the waiting list will be promoted if slots become available.
+	  </pre>
+  See the <a href="http://api.challonge.com/v1/documents/tournaments/process_check_ins">Challonge API Doc</a> for a full list of object properties.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>client.tournaments.processCheckIns({
+  id: 'my-tournament-url',
+  callback: (err, data) => {
+    console.log(err, data);
+  }
+});</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">params to pass to the api request
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The url of the tournament to processCheckIns</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A method to call when the API returns.  Arguments are (error, data)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="reset"><span class="type-signature"></span>reset<span class="signature">(obj)</span><span class="type-signature"></span></h4>
 
     
@@ -1021,7 +1465,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line243">line 243</a>
+        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line245">line 245</a>
     </li></ul></dd>
     
 
@@ -1237,7 +1681,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line109">line 109</a>
+        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line111">line 111</a>
     </li></ul></dd>
     
 
@@ -1453,7 +1897,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line191">line 191</a>
+        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line193">line 193</a>
     </li></ul></dd>
     
 
@@ -1669,7 +2113,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line139">line 139</a>
+        <a href="api_tournaments.js.html">api/tournaments.js</a>, <a href="api_tournaments.js.html#line141">line 141</a>
     </li></ul></dd>
     
 
@@ -1912,7 +2356,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 20 2017 01:36:24 GMT-0400 (EDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 20 2017 22:51:32 GMT-0400 (EDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
