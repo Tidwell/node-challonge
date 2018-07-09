@@ -1,5 +1,8 @@
+### 2.1.2
+- Force escaping of all url params (#34)
+
 ### 2.1.1
-- Fix bug preventing match_id and participant_id passed as underscore properties for URL generation #32
+- Fix bug preventing match_id and participant_id passed as underscore properties for URL generation (#32)
 
 ### 2.1.0
 - Fix null values being returned as empty objects (#24)
