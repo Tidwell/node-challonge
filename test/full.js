@@ -6,7 +6,7 @@ var client = challonge.createClient({
 	version: 1,
 });
 
-var tourneyName = 'new_api_test' + Math.floor(Math.random()*10000);
+var tourneyName = 'new_api_test扶摇ståleSÓLO独播' + Math.floor(Math.random()*10000);
 
 client.tournaments.create({
 	tournament: {
@@ -31,7 +31,7 @@ function update() {
 			url: tourneyName,
 			signupCap: 16,
 			tournamentType: 'double elimination',
-			description: 'some new description',
+			description: 'some new description扶摇ståleSÓLO独播',
 			acceptAttachments: true
 
 		},
@@ -39,7 +39,7 @@ function update() {
 			if (err) { console.log(err); return; }
 			console.log(data);
 
-			pcreate('player1');
+			pcreate('player1扶摇ståleSÓLO独播');
 		}
 	});
 }
@@ -53,7 +53,7 @@ function pcreate(name) {
 		callback: function(err,data){
 			if (err) { console.log(err); return; }
 			console.log(data);
-			if (name === 'player1') {
+			if (name === 'player1扶摇ståleSÓLO独播') {
 				pcreate('player2');
 			} else {
 				start();
