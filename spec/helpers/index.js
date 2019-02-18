@@ -27,6 +27,10 @@ const httpsMock = {
 
 		return {
 			end: () => {
+			},
+			destroy: () => {
+			},
+			on: () => {
 			}
 		};
 	}
