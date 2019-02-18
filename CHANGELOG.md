@@ -1,3 +1,6 @@
+### 2.2.0
+- Add timeout support (#39)
+
 ### 2.1.2
 - Force escaping of all url params (#34)
 

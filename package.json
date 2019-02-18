@@ -3,7 +3,7 @@
   "description": "Wrapper for the challong api",
   "author": "Aaron Tiwell <aaron.tidwell@gmail.com>",
   "main": "./lib/challonge.js",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "contributors": [
     {
       "name": "Ricardo Reis",
