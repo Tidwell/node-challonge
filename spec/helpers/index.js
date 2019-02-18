@@ -6,6 +6,7 @@ mockery.enable({
 
 const httpsMock = {
 	reset: function() {
+		this.reqListeners = {};
 		this.listeners = {};
 		this.opts = {};
 		this.res.statusCode = '';
@@ -13,6 +14,7 @@ const httpsMock = {
 	opts: {},
 	listeners: {
 	},
+	reqListeners: {},
 	res: {
 		on: (method, cb) => {
 			if (!httpsMock.listeners[method]) {
@@ -30,7 +32,11 @@ const httpsMock = {
 			},
 			destroy: () => {
 			},
-			on: () => {
+			on: (method, cb) => {
+				if (!httpsMock.reqListeners[method]) {
+					httpsMock.reqListeners[method] = [];
+				}
+				httpsMock.reqListeners[method].push(cb);
 			}
 		};
 	}
